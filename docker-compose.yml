@@ -1,7 +1,7 @@
 postgresql:
   image: postgres:9.6
   ports:
-    - 5432:5432
+    - 54321:54321
   environment:
     - PGDATA=/postgresql
     - PG_PASSWORD=our-awesome-bookstore-app

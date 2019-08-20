@@ -23,13 +23,15 @@ default: &default
 
 development:
   <<: *default
-  database: bookstore-backend_development
+  database: bookstore_backend_development
+  username: postgres
+  password: myPassword
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: bookstore-backend
+  #username: bookstore_backend
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: bookstore-backend_test
+  database: bookstore_backend_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: bookstore-backend_production
-  username: bookstore-backend
-  password: <%= ENV['BOOKSTORE-BACKEND_DATABASE_PASSWORD'] %>
+  database: bookstore_backend_production
+  username: bookstore_backend
+  password: <%= ENV['DATABASE_URL'] %>
