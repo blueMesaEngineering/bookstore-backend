@@ -4,6 +4,6 @@ postgresql:
     - 54321:54321
   environment:
     - PGDATA=/postgresql
-    - PG_PASSWORD=our-awesome-bookstore-app
+    - PG_PASSWORD=myPassword
   volumes:
     - ./tmp/data/postgresql:/postgresql
